@@ -17,6 +17,7 @@ public class UserService {
     private static ObjectRepository<User> userRepository;
 
     public static void initDatabase() {
+
         Nitrite database = Nitrite.builder()
                 .filePath(getPathToFile("admin-and-customer-accounts.db").toFile())
                 .openOrCreate("test", "test");
@@ -56,6 +57,4 @@ public class UserService {
         }
         return md;
     }
-
-
 }
