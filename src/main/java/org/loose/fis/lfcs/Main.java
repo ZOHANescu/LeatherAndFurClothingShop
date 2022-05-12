@@ -7,9 +7,9 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.loose.fis.lfcs.services.FileSystemService;
 import org.loose.fis.lfcs.services.UserService;
-
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Objects;
 
 public class Main extends Application {
 
@@ -17,9 +17,9 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         initDirectory();
         UserService.initDatabase();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("\\fxml-scenes\\login-page.fxml"));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\login-page.fxml")));
         primaryStage.setTitle("Leather and Fur Clothing Shop");
-        primaryStage.setScene(new Scene(root, 300, 275));
+        primaryStage.setScene(new Scene(root, 600, 450));
         primaryStage.show();
     }
 
@@ -28,7 +28,6 @@ public class Main extends Application {
         if (!Files.exists(applicationHomePath))
             applicationHomePath.toFile().mkdirs();
     }
-
 
     public static void main(String[] args) {
         launch(args);

@@ -36,6 +36,6 @@ public class LoginController {
     public void loadRegisterPageButton() throws Exception {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\register.fxml")));
         Stage window = (Stage) registerButton.getScene().getWindow();
-        window.setScene(new Scene(root, 600, 300));
+        window.setScene(new Scene(root, 600, 450));
     }
 }

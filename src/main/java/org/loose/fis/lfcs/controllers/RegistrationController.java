@@ -46,6 +46,6 @@ public class RegistrationController {
     public void handleBackButton() throws Exception{
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\login-page.fxml")));
         Stage window = (Stage) backButton.getScene().getWindow();
-        window.setScene(new Scene(root, 600, 300));
+        window.setScene(new Scene(root, 600, 450));
     }
 }

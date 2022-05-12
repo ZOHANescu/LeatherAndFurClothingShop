@@ -4,34 +4,17 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.Pane?>
 
-<GridPane fx:controller="org.loose.fis.lfcs.controllers.LoginController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="338.0" prefWidth="512.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
-    <columnConstraints>
-        <ColumnConstraints />
-        <ColumnConstraints maxWidth="95.0" minWidth="10.0" prefWidth="100.0" />
-        <ColumnConstraints maxWidth="111.0" minWidth="10.0" prefWidth="98.0" />
-        <ColumnConstraints maxWidth="242.0" minWidth="10.0" prefWidth="191.0" />
-        <ColumnConstraints hgrow="ALWAYS" maxWidth="95.0" minWidth="0.0" prefWidth="19.0" />
-        <ColumnConstraints hgrow="ALWAYS" maxWidth="95.0" minWidth="0.0" prefWidth="0.0" />
-    </columnConstraints>
-    <rowConstraints>
-        <RowConstraints maxHeight="47.0" minHeight="20.0" prefHeight="44.0" />
-        <RowConstraints maxHeight="53.0" minHeight="10.0" prefHeight="29.0" />
-        <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="35.0" />
-        <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="35.0" />
-        <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="35.0" />
-        <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="35.0" />
-        <RowConstraints maxHeight="56.0" minHeight="10.0" prefHeight="35.0" />
-        <RowConstraints maxHeight="25.0" minHeight="0.0" prefHeight="0.0" />
-    </rowConstraints>
-    <Label fx:id="title" text="Leather and Fur Clothing Shop" GridPane.columnIndex="3" />
-    <Label text="Username:" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-    <Label text="Password:" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-    <TextField fx:id="usernameField" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-    <PasswordField fx:id="passwordField" GridPane.columnIndex="3" GridPane.rowIndex="3" />
-    <Button fx:id="loginButton" mnemonicParsing="false" onAction="#handleLoginMessage" prefHeight="32.0" prefWidth="110.0" text="Log In" GridPane.columnIndex="3" GridPane.rowIndex="5" />
-    <Button fx:id="registerButton" mnemonicParsing="false" onAction="#loadRegisterPageButton" prefHeight="32.0" prefWidth="110.0" text="Register" GridPane.columnIndex="3" GridPane.rowIndex="6" />
-</GridPane>
+
+<Pane prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.lfcs.controllers.LoginController">
+   <children>
+       <Label layoutX="169.0" layoutY="185.0" text="Password:" />
+       <Button fx:id="registerButton" layoutX="211.0" layoutY="290.0" mnemonicParsing="false" onAction="#loadRegisterPageButton" prefHeight="32.0" prefWidth="156.0" text="Register New Account" />
+       <PasswordField fx:id="passwordField" layoutX="244.0" layoutY="181.0" />
+       <Button fx:id="loginButton" layoutX="234.0" layoutY="242.0" mnemonicParsing="false" onAction="#handleLoginMessage" prefHeight="32.0" prefWidth="110.0" text="Log In" />
+       <TextField fx:id="usernameField" layoutX="244.0" layoutY="128.0" />
+       <Label layoutX="169.0" layoutY="132.0" text="Username:" />
+       <Label fx:id="title" ellipsisString="" layoutX="206.0" layoutY="68.0" prefHeight="32.0" prefWidth="189.0" text="Leather and Fur Clothing Shop" textOverrun="CLIP" />
+   </children>
+</Pane>
