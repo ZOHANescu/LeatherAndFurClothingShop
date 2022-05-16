@@ -45,7 +45,7 @@ public class LoginController {
                     Stage window = (Stage) registerButton.getScene().getWindow();
                     window.setScene(new Scene(root, 600, 450));
                 } else if(user.getRole().equals("Admin")){
-                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\mainScreen.fxml")));
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\adminMainScreen.fxml")));
                     Stage window = (Stage) registerButton.getScene().getWindow();
                     window.setScene(new Scene(root, 600, 450));
                 }
@@ -60,5 +60,6 @@ public class LoginController {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\register.fxml")));
         Stage window = (Stage) registerButton.getScene().getWindow();
         window.setScene(new Scene(root, 600, 450));
+        //changeSceneButton(registerButton, "fxml-scenes\\register.fxml", 600, 450);
     }
 }
