@@ -9,6 +9,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import org.loose.fis.lfcs.exceptions.UserInvalidCredentials;
+import org.loose.fis.lfcs.model.User;
+import org.loose.fis.lfcs.services.UserService;
+
+import java.io.IOException;
 import java.util.Objects;
 
 public class LoginController {
@@ -23,13 +28,31 @@ public class LoginController {
     public Label title;
     @FXML
     public Button loginButton;
+    @FXML
+    public Label message;
 
-    private int count = 1;
 
     @FXML
-    public void handleLoginMessage() {
-        title.setText("Clicked " + this.count + " times!");
-        this.count++;
+    public void handleLoginAction() throws IOException {
+
+        User user;
+
+        try{
+            user = UserService.verifyCredentials(usernameField.getText(), passwordField.getText());
+            if(user != null){
+                if(user.getRole().equals("Customer")){
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\mainScreen.fxml")));
+                    Stage window = (Stage) registerButton.getScene().getWindow();
+                    window.setScene(new Scene(root, 600, 450));
+                } else if(user.getRole().equals("Admin")){
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\mainScreen.fxml")));
+                    Stage window = (Stage) registerButton.getScene().getWindow();
+                    window.setScene(new Scene(root, 600, 450));
+                }
+            }
+        }catch(UserInvalidCredentials e){
+            message.setText(e.getMessage());
+        }
     }
 
     @FXML

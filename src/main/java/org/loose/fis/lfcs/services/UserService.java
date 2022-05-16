@@ -2,6 +2,7 @@ package org.loose.fis.lfcs.services;
 
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.loose.fis.lfcs.exceptions.UserInvalidCredentials;
 import org.loose.fis.lfcs.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.lfcs.model.User;
 
@@ -35,6 +36,26 @@ public class UserService {
             if (Objects.equals(username, user.getUsername()))
                 throw new UsernameAlreadyExistsException(username);
         }
+    }
+
+    public static User verifyCredentials(String username, String password) throws UserInvalidCredentials {
+
+        User user = null;
+        password = encodePassword(username, password);
+
+        for(User userDB : userRepository.find()){
+
+            if(Objects.equals(username, userDB.getUsername())){
+                if(!Objects.equals(password, userDB.getPassword())){      // password is incorrect
+                    throw new UserInvalidCredentials();
+                } else {
+                    user = userDB;
+                    break;
+                }
+            }
+        }
+
+        return user;
     }
 
     private static String encodePassword(String salt, String password) {
