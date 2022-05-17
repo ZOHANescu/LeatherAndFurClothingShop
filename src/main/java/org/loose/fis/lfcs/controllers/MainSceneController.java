@@ -16,6 +16,8 @@ public class MainSceneController {
     public Button signOutButton;
     @FXML
     public Button myOrdersButton;
+    @FXML
+    public Button receivedOrdersButton;
 
     @FXML
     public void initialize(){
@@ -31,6 +33,12 @@ public class MainSceneController {
     public void handleMyOrdersButton() throws IOException {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\myOrders.fxml")));
         Stage window = (Stage) myOrdersButton.getScene().getWindow();
+        window.setScene(new Scene(root, 1200, 850));
+    }
+
+    public void handleReceivedOrdersButton() throws IOException{
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\receivedOrders.fxml")));
+        Stage window = (Stage) receivedOrdersButton.getScene().getWindow();
         window.setScene(new Scene(root, 1200, 850));
     }
 }
