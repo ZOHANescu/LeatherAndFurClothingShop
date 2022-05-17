@@ -8,6 +8,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import org.loose.fis.lfcs.exceptions.UserInvalidCredentials;
 import org.loose.fis.lfcs.model.User;
@@ -31,6 +35,10 @@ public class LoginController {
     @FXML
     public Label message;
 
+    @FXML
+    public void initialize(){
+        title.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 14));
+    }
 
     @FXML
     public void handleLoginAction() throws IOException {
@@ -41,16 +49,18 @@ public class LoginController {
             user = UserService.verifyCredentials(usernameField.getText(), passwordField.getText());
             if(user != null){
                 if(user.getRole().equals("Customer")){
-                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\mainScreen.fxml")));
+                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\customerMainScreen.fxml")));
                     Stage window = (Stage) registerButton.getScene().getWindow();
-                    window.setScene(new Scene(root, 600, 450));
+                    window.setScene(new Scene(root, 1200, 850));
                 } else if(user.getRole().equals("Admin")){
                     Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\adminMainScreen.fxml")));
                     Stage window = (Stage) registerButton.getScene().getWindow();
-                    window.setScene(new Scene(root, 600, 450));
+                    window.setScene(new Scene(root, 1200, 850));
                 }
             }
         }catch(UserInvalidCredentials e){
+            message.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 14));
+            message.setTextFill(Color.RED);
             message.setText(e.getMessage());
         }
     }

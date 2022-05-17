@@ -15,8 +15,10 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
+
         initDirectory();
         UserService.initDatabase();
+
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\login-page.fxml")));
         primaryStage.setTitle("Leather and Fur Clothing Shop");
         primaryStage.setScene(new Scene(root, 600, 450));
