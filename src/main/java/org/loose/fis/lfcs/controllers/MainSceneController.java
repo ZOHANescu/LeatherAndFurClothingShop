@@ -5,6 +5,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -20,15 +22,31 @@ public class MainSceneController {
     public Button receivedOrdersButton;
     @FXML
     public Button aboutUsButton;
+    @FXML
+    public ImageView timeIcon;
+    @FXML
+    public ImageView truckIcon;
 
     private Parent root;
     private Stage window;
 
     @FXML
     public void initialize(){
+        try {   //loaded the icons
+            Image truckImg = new Image("icons\\truck.jpg");
+            truckIcon.setImage(truckImg);
+            truckIcon.setCache(true);
 
+            Image timeImg = new Image("icons\\time.jpg");
+            timeIcon.setImage(timeImg);
+            timeIcon.setCache(true);
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
     }
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    /* Button handling */
     public void handleSignOutButton() throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\login-page.fxml")));
         window = (Stage) signOutButton.getScene().getWindow();
@@ -55,4 +73,5 @@ public class MainSceneController {
         window = (Stage) aboutUsButton.getScene().getWindow();
         window.setScene(new Scene(root, 800, 500));
     }
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }
