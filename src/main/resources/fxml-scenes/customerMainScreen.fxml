@@ -43,7 +43,7 @@
                            <VBox.margin>
                               <Insets />
                            </VBox.margin></Button>
-                        <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" styleClass="buttons" stylesheets="@../cssStyles/clientPageStyle.css" text="My orders">
+                        <Button fx:id="myOrdersButton" onAction="#handleMyOrdersButton" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" styleClass="buttons" stylesheets="@../cssStyles/clientPageStyle.css" text="My orders">
                            <VBox.margin>
                               <Insets top="40.0" />
                            </VBox.margin>

@@ -18,12 +18,16 @@ public class MainSceneController {
     public Button myOrdersButton;
     @FXML
     public Button receivedOrdersButton;
+    @FXML
+    public Button aboutUsButton;
 
     private Parent root;
     private Stage window;
 
     @FXML
-    public void initialize(){}
+    public void initialize(){
+
+    }
 
     public void handleSignOutButton() throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\login-page.fxml")));
@@ -33,6 +37,7 @@ public class MainSceneController {
 
     public void handleMyOrdersButton() throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\myOrders.fxml")));
+        root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
         window = (Stage) myOrdersButton.getScene().getWindow();
         window.setScene(new Scene(root, 1200, 850));
     }
@@ -41,5 +46,13 @@ public class MainSceneController {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\receivedOrders.fxml")));
         window = (Stage) receivedOrdersButton.getScene().getWindow();
         window.setScene(new Scene(root, 1200, 850));
+    }
+
+
+    public void handleAboutUsButton() throws IOException{
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\aboutUsPage.fxml")));
+        root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
+        window = (Stage) aboutUsButton.getScene().getWindow();
+        window.setScene(new Scene(root, 800, 500));
     }
 }

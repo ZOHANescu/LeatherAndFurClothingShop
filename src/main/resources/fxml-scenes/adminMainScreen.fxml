@@ -5,19 +5,18 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" fx:controller="org.loose.fis.lfcs.controllers.MainSceneController"
-      prefHeight="850.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="850.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.lfcs.controllers.MainSceneController">
    <Label layoutX="26.0" layoutY="12.0" prefHeight="25.0" prefWidth="473.0" text="ADMIN main scene">
       <font>
          <Font name="System Bold" size="40.0" />
       </font>
    </Label>
-   <Button fx:id="signOutButton" onAction="#handleSignOutButton" layoutX="1066.0" layoutY="23.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="106.0" text="Sign out">
+   <Button fx:id="signOutButton" layoutX="1066.0" layoutY="23.0" mnemonicParsing="false" onAction="#handleSignOutButton" prefHeight="37.0" prefWidth="106.0" text="Sign out">
       <font>
          <Font size="16.0" />
       </font>
    </Button>
-   <Button fx:id="receivedOrdersButton" onAction="#handleReceivedOrdersButton" layoutX="427.0" layoutY="23.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="83.0" text="My Orders">
+   <Button fx:id="receivedOrdersButton" layoutX="427.0" layoutY="23.0" mnemonicParsing="false" onAction="#handleReceivedOrdersButton" prefHeight="37.0" prefWidth="106.0" text="My Orders">
       <font>
          <Font size="16.0" />
       </font>

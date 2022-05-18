@@ -53,6 +53,7 @@ public class LoginController {
             if(user != null){
                 if(user.getRole().equals("Customer")){
                     root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\customerMainScreen.fxml")));
+                    root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
                     window = (Stage) registerButton.getScene().getWindow();
                     window.setScene(new Scene(root, 1200, 850));
                 } else if(user.getRole().equals("Admin")){
@@ -73,6 +74,5 @@ public class LoginController {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\register.fxml")));
         window = (Stage) registerButton.getScene().getWindow();
         window.setScene(new Scene(root, 600, 450));
-        //changeSceneButton(registerButton, "fxml-scenes\\register.fxml", 600, 450);
     }
 }

@@ -20,6 +20,7 @@ public class AboutUsController {
     @FXML
     public void handleBackButton() throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\customerMainScreen.fxml")));
+        root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
         window = (Stage) backButton.getScene().getWindow();
         window.setScene(new Scene(root, 1200, 850));
     }
