@@ -27,6 +27,9 @@ public class RegistrationController {
     @FXML
     private Button backButton;
 
+    private Parent root;
+    private Stage window;
+
     @FXML
     public void initialize() {
         role.getItems().addAll("Customer", "Admin");
@@ -44,8 +47,8 @@ public class RegistrationController {
 
     @FXML
     public void handleBackButton() throws Exception{
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\login-page.fxml")));
-        Stage window = (Stage) backButton.getScene().getWindow();
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\login-page.fxml")));
+        window = (Stage) backButton.getScene().getWindow();
         window.setScene(new Scene(root, 600, 450));
     }
 }

@@ -8,10 +8,12 @@ import lombok.Setter;
 public class Product {
 
     private String productName;
-    private double productPrice;
+    private int productPrice;
+    private String productDescription;
 
-    public Product(String productName, double productPrice) {
+    public Product(String productName, int productPrice, String productDescription) {
         this.productName = productName;
         this.productPrice = productPrice;
+        this.productDescription = productDescription;
     }
 }

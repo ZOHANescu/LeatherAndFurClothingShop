@@ -15,14 +15,15 @@ public class MyOrdersController {
     @FXML
     public Button backButton;
 
-    @FXML
-    public void initialize(){
+    private Parent root;
+    private Stage window;
 
-    }
+    @FXML
+    public void initialize(){}
 
     public void handleBackButton() throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\customerMainScreen.fxml")));
-        Stage window = (Stage) backButton.getScene().getWindow();
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\customerMainScreen.fxml")));
+        window = (Stage) backButton.getScene().getWindow();
         window.setScene(new Scene(root, 1200, 850));
     }
 }

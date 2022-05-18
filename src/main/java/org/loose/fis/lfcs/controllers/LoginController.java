@@ -35,6 +35,9 @@ public class LoginController {
     @FXML
     public Label message;
 
+    private Parent root;
+    private Stage window;
+
     @FXML
     public void initialize(){
         title.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 14));
@@ -49,12 +52,12 @@ public class LoginController {
             user = UserService.verifyCredentials(usernameField.getText(), passwordField.getText());
             if(user != null){
                 if(user.getRole().equals("Customer")){
-                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\customerMainScreen.fxml")));
-                    Stage window = (Stage) registerButton.getScene().getWindow();
+                    root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\customerMainScreen.fxml")));
+                    window = (Stage) registerButton.getScene().getWindow();
                     window.setScene(new Scene(root, 1200, 850));
                 } else if(user.getRole().equals("Admin")){
-                    Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\adminMainScreen.fxml")));
-                    Stage window = (Stage) registerButton.getScene().getWindow();
+                    root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\adminMainScreen.fxml")));
+                    window = (Stage) registerButton.getScene().getWindow();
                     window.setScene(new Scene(root, 1200, 850));
                 }
             }
@@ -67,8 +70,8 @@ public class LoginController {
 
     @FXML
     public void loadRegisterPageButton() throws Exception {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\register.fxml")));
-        Stage window = (Stage) registerButton.getScene().getWindow();
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\register.fxml")));
+        window = (Stage) registerButton.getScene().getWindow();
         window.setScene(new Scene(root, 600, 450));
         //changeSceneButton(registerButton, "fxml-scenes\\register.fxml", 600, 450);
     }

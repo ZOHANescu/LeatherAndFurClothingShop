@@ -19,26 +19,27 @@ public class MainSceneController {
     @FXML
     public Button receivedOrdersButton;
 
-    @FXML
-    public void initialize(){
+    private Parent root;
+    private Stage window;
 
-    }
+    @FXML
+    public void initialize(){}
 
     public void handleSignOutButton() throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\login-page.fxml")));
-        Stage window = (Stage) signOutButton.getScene().getWindow();
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\login-page.fxml")));
+        window = (Stage) signOutButton.getScene().getWindow();
         window.setScene(new Scene(root, 600, 450));
     }
 
     public void handleMyOrdersButton() throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\myOrders.fxml")));
-        Stage window = (Stage) myOrdersButton.getScene().getWindow();
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\myOrders.fxml")));
+        window = (Stage) myOrdersButton.getScene().getWindow();
         window.setScene(new Scene(root, 1200, 850));
     }
 
     public void handleReceivedOrdersButton() throws IOException{
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\receivedOrders.fxml")));
-        Stage window = (Stage) receivedOrdersButton.getScene().getWindow();
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\receivedOrders.fxml")));
+        window = (Stage) receivedOrdersButton.getScene().getWindow();
         window.setScene(new Scene(root, 1200, 850));
     }
 }

@@ -13,10 +13,13 @@ public class ReceivedOrdersController {
 
     public Button backButton;
 
+    private Parent root;
+    private Stage window;
+
     @FXML
     public void handleBackButton() throws IOException {
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\adminMainScreen.fxml")));
-        Stage window = (Stage) backButton.getScene().getWindow();
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\adminMainScreen.fxml")));
+        window = (Stage) backButton.getScene().getWindow();
         window.setScene(new Scene(root, 1200, 850));
     }
 }
