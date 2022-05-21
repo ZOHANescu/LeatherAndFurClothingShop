@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import org.loose.fis.lfcs.services.CenterSceneService;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -22,6 +23,7 @@ public class AboutUsController {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\customerMainScreen.fxml")));
         root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
         window = (Stage) backButton.getScene().getWindow();
-        window.setScene(new Scene(root, 1200, 850));
+        window.setScene(new Scene(root, 1440, 850));
+        CenterSceneService.centerPage(window);
     }
 }

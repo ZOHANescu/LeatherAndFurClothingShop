@@ -48,10 +48,6 @@ public class MainSceneController{
             Image truckImg = new Image("icons\\truck.jpg");
             truckIcon.setImage(truckImg);
             truckIcon.setCache(true);
-
-            Image timeImg = new Image("icons\\time.jpg");
-            timeIcon.setImage(timeImg);
-            timeIcon.setCache(true);
         } catch (Exception e) {
             System.out.println(e.getMessage());
         }
@@ -71,20 +67,22 @@ public class MainSceneController{
         root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
         window = (Stage) myOrdersButton.getScene().getWindow();
         window.setScene(new Scene(root, 1440, 850));
+        CenterSceneService.centerPage(window);
     }
 
     public void handleReceivedOrdersButton() throws IOException{
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\receivedOrders.fxml")));
         window = (Stage) receivedOrdersButton.getScene().getWindow();
         window.setScene(new Scene(root, 1440, 850));
+        CenterSceneService.centerPage(window);
     }
 
 
     public void handleAboutUsButton() throws IOException{
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\aboutUsPage.fxml")));
-        //root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
         window = (Stage) aboutUsButton.getScene().getWindow();
         window.setScene(new Scene(root, 800, 500));
+        CenterSceneService.centerPage(window);
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
