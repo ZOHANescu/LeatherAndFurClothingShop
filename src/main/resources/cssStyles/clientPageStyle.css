@@ -1,13 +1,36 @@
+.mainBackground{
+    -fx-background-color: #E6E6FA;
+}
+
 .right-bar{
     -fx-background-color: #FAEBD7;
 }
 
 .buttons{
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: white;
     -fx-background-radius: 100;
+    -fx-border-color: #b8860b;
+    -fx-border-radius: 100;
+    -fx-border-width: 2;
+}
+
+.view-product-button{
+    -fx-background-color: white;
+    -fx-background-radius: 100;
+    -fx-border-width: 2;
+    -fx-border-color: #b8860b;
+    -fx-border-radius: 100;
 }
 
 .free-delivery-card{
-    -fx-background-color: #FAEBD7;
+    -fx-background-color: white;
     -fx-background-radius: 30;
+    -fx-border-radius: 30;
+    -fx-border-color: #b8860b;
+    -fx-border-width: 2;
+}
+
+.scrollPanel{
+    -fx-background-color: rgba(0,0,0,0);
+    -fx-background-radius: 100;
 }
