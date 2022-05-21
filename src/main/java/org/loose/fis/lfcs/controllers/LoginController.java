@@ -2,6 +2,7 @@ package org.loose.fis.lfcs.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -12,11 +13,12 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 import org.loose.fis.lfcs.exceptions.UserInvalidCredentials;
 import org.loose.fis.lfcs.model.User;
+import org.loose.fis.lfcs.services.CenterSceneService;
 import org.loose.fis.lfcs.services.UserService;
-
 import java.io.IOException;
 import java.util.Objects;
 
@@ -56,10 +58,12 @@ public class LoginController {
                     root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
                     window = (Stage) registerButton.getScene().getWindow();
                     window.setScene(new Scene(root, 1440, 850));
+                    CenterSceneService.centerPage(window);
                 } else if(user.getRole().equals("Admin")){
                     root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\adminMainScreen.fxml")));
                     window = (Stage) registerButton.getScene().getWindow();
                     window.setScene(new Scene(root, 1440, 850));
+                    CenterSceneService.centerPage(window);
                 }
             }
         }catch(UserInvalidCredentials e){
