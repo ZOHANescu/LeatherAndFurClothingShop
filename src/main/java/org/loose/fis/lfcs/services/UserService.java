@@ -18,7 +18,7 @@ public class UserService {
     private static ObjectRepository<User> userRepository;
 
     public static void initDatabase() {
-
+    //java -jar --module-path "C:\Program Files\Java\javafx-sdk-18\lib" --add-modules javafx.controls,javafx.fxml nitrite-explorer-3.4.3.jar
         Nitrite database = Nitrite.builder()
                 .filePath(getPathToFile("admin-and-customer-accounts.db").toFile())
                 .openOrCreate("test", "test");
