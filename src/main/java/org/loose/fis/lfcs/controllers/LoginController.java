@@ -61,6 +61,7 @@ public class LoginController {
                     CenterSceneService.centerPage(window);
                 } else if(user.getRole().equals("Admin")){
                     root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\adminMainScreen.fxml")));
+                    root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
                     window = (Stage) registerButton.getScene().getWindow();
                     window.setScene(new Scene(root, 1440, 850));
                     CenterSceneService.centerPage(window);

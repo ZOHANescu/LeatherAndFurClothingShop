@@ -122,6 +122,7 @@ public class MainSceneController implements Initializable {
     /* Button handling */
     public void handleSignOutButton() throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\login-page.fxml")));
+        root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
         window = (Stage) signOutButton.getScene().getWindow();
         window.setScene(new Scene(root, 600, 450));
         CenterSceneService.centerPage(window);
@@ -137,6 +138,7 @@ public class MainSceneController implements Initializable {
 
     public void handleReceivedOrdersButton() throws IOException{
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\receivedOrders.fxml")));
+        root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
         window = (Stage) receivedOrdersButton.getScene().getWindow();
         window.setScene(new Scene(root, 1440, 850));
         CenterSceneService.centerPage(window);
@@ -144,6 +146,7 @@ public class MainSceneController implements Initializable {
 
     public void handleAboutUsButton() throws IOException{
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\aboutUsPage.fxml")));
+        root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
         window = (Stage) aboutUsButton.getScene().getWindow();
         window.setScene(new Scene(root, 800, 500));
         CenterSceneService.centerPage(window);
@@ -151,8 +154,9 @@ public class MainSceneController implements Initializable {
 
     public void handleAddProductButton() throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\addProduct.fxml")));
+        root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
         window = (Stage) addProdButton.getScene().getWindow();
-        window.setScene(new Scene(root, 800, 500));
+        window.setScene(new Scene(root, 700, 850));
         CenterSceneService.centerPage(window);
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
