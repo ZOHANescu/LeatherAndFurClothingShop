@@ -21,6 +21,7 @@ public class AddProductController {
 
     public void handleBackButton() throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\adminMainScreen.fxml")));
+        root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
         window = (Stage) backButton.getScene().getWindow();
         window.setScene(new Scene(root, 1440, 850));
         CenterSceneService.centerPage(window);
