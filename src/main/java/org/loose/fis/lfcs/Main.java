@@ -1,5 +1,6 @@
 package org.loose.fis.lfcs;
 
+import animatefx.animation.*;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
@@ -29,6 +30,8 @@ public class Main extends Application {
         Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
         primaryStage.setX((primScreenBounds.getWidth() - primaryStage.getWidth()) / 2);
         primaryStage.setY((primScreenBounds.getHeight() - primaryStage.getHeight()) / 2);
+
+        new FadeIn(root);
     }
 
     private void initDirectory() {

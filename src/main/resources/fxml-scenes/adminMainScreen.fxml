@@ -15,7 +15,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="850.0" prefWidth="1440.0" styleClass="mainBackground" stylesheets="@../cssStyles/clientPageStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.lfcs.controllers.MainSceneController">
+<AnchorPane prefHeight="850.0" prefWidth="1440.0" styleClass="mainBackground" stylesheets="@../cssStyles/clientPageStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.lfcs.controllers.AdminMainSceneController">
    <children>
       <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <left>
@@ -37,10 +37,13 @@
                            <font>
                               <Font name="Cambria" size="35.0" />
                            </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
                         </Label>
                      </children>
                      <VBox.margin>
-                        <Insets top="15.0" />
+                        <Insets top="5.0" />
                      </VBox.margin>
                   </HBox>
                   <VBox fx:id="chosenProdCard" alignment="CENTER" prefHeight="730.0" prefWidth="431.0">
@@ -53,6 +56,9 @@
                                        <font>
                                           <Font name="Cambria Bold Italic" size="24.0" />
                                        </font>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
                                     </Label>
                                     <Label alignment="BOTTOM_CENTER" prefHeight="30.0" prefWidth="222.0" text="Administrator Page" textFill="DARKGOLDENROD">
                                        <font>
@@ -78,39 +84,163 @@
                               <Insets bottom="20.0" left="20.0" right="20.0" />
                            </VBox.margin>
                         </HBox>
-                        <HBox prefHeight="45.0" prefWidth="431.0">
+                        <VBox prefHeight="159.0" prefWidth="150.0">
                            <children>
-                              <Label fx:id="prodNameLabel" prefHeight="35.0" prefWidth="275.0" text="Product name" textFill="DARKGOLDENROD">
-                                 <font>
-                                    <Font name="Cambria Italic" size="30.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets left="10.0" />
-                                 </HBox.margin>
-                              </Label>
-                              <Label fx:id="prodPriceLabel" prefHeight="35.0" prefWidth="152.0" text="Price: $500" textFill="DARKGOLDENROD">
-                                 <font>
-                                    <Font name="Cambria Italic" size="30.0" />
-                                 </font>
-                                 <HBox.margin>
-                                    <Insets right="10.0" />
-                                 </HBox.margin>
-                              </Label>
+                              <HBox alignment="CENTER" prefHeight="109.0" prefWidth="467.0" styleClass="free-delivery-card" stylesheets="@../cssStyles/clientPageStyle.css">
+                                 <padding>
+                                    <Insets left="10.0" top="25.0" />
+                                 </padding>
+                                 <children>
+                                    <VBox fillWidth="false" prefHeight="80.0" prefWidth="273.0">
+                                       <children>
+                                          <Label alignment="CENTER" prefHeight="30.0" prefWidth="430.0" text="Here you can do " textFill="DARKGOLDENROD">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="24.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label alignment="BOTTOM_CENTER" prefHeight="30.0" prefWidth="250.0" text="the following actions:" textFill="DARKGOLDENROD">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="20.0" left="10.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="60.0" right="60.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="109.0" prefWidth="467.0" styleClass="free-delivery-card" stylesheets="@../cssStyles/clientPageStyle.css">
+                                 <padding>
+                                    <Insets left="10.0" top="25.0" />
+                                 </padding>
+                                 <children>
+                                    <VBox fillWidth="false" prefHeight="80.0" prefWidth="273.0">
+                                       <children>
+                                          <Label alignment="CENTER" prefHeight="30.0" prefWidth="430.0" text="1. Add new products" textFill="DARKGOLDENROD">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="24.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label alignment="BOTTOM_CENTER" prefHeight="30.0" prefWidth="250.0" text="to the shop." textFill="DARKGOLDENROD">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="20.0" left="10.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="109.0" prefWidth="467.0" styleClass="free-delivery-card" stylesheets="@../cssStyles/clientPageStyle.css">
+                                 <padding>
+                                    <Insets left="10.0" top="25.0" />
+                                 </padding>
+                                 <children>
+                                    <VBox fillWidth="false" prefHeight="80.0" prefWidth="273.0">
+                                       <children>
+                                          <Label alignment="CENTER" prefHeight="30.0" prefWidth="430.0" text="1. Add new products" textFill="DARKGOLDENROD">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="24.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label alignment="BOTTOM_CENTER" prefHeight="30.0" prefWidth="250.0" text="to the shop." textFill="DARKGOLDENROD">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="20.0" left="10.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="109.0" prefWidth="467.0" styleClass="free-delivery-card" stylesheets="@../cssStyles/clientPageStyle.css">
+                                 <padding>
+                                    <Insets left="10.0" top="25.0" />
+                                 </padding>
+                                 <children>
+                                    <VBox fillWidth="false" prefHeight="80.0" prefWidth="273.0">
+                                       <children>
+                                          <Label alignment="CENTER" prefHeight="30.0" prefWidth="430.0" text="2. Remove products" textFill="DARKGOLDENROD">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="24.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label alignment="BOTTOM_CENTER" prefHeight="30.0" prefWidth="250.0" text="from the shop." textFill="DARKGOLDENROD">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="20.0" left="10.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" />
+                                 </VBox.margin>
+                              </HBox>
                            </children>
-                        </HBox>
-                        <ImageView fx:id="displayedImage" fitHeight="450.0" fitWidth="330.0" pickOnBounds="true" preserveRatio="true">
+                        </VBox>
+                        <ImageView fx:id="displayedImage" fitHeight="186.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../products/cojoc-sonia.jpg" />
+                              <Image url="@../icons/bigLeatherSign.png" />
                            </image>
-                        </ImageView>
-                        <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" styleClass="view-product-button" stylesheets="@../cssStyles/clientPageStyle.css" text="View product" textFill="DARKGOLDENROD">
-                           <font>
-                              <Font name="Cambria Bold Italic" size="20.0" />
-                           </font>
                            <VBox.margin>
-                              <Insets bottom="20.0" top="20.0" />
+                              <Insets />
                            </VBox.margin>
-                        </Button>
+                        </ImageView>
+                        <HBox prefHeight="45.0" prefWidth="431.0" />
                      </children>
                   </VBox>
                </children>
@@ -127,13 +257,6 @@
                         <Insets left="75.0" top="15.0" />
                      </padding>
                      <children>
-                        <Button fx:id="homeButton" onAction="#handleHomeButton" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" styleClass="buttons" stylesheets="@../cssStyles/clientPageStyle.css" text="Home" textFill="DARKGOLDENROD">
-                           <font>
-                              <Font name="Cambria Bold Italic" size="20.0" />
-                           </font>
-                           <HBox.margin>
-                              <Insets />
-                           </HBox.margin></Button>
                         <Pane prefHeight="85.0" prefWidth="40.0" />
                         <Button fx:id="receivedOrdersButton" mnemonicParsing="false" onAction="#handleReceivedOrdersButton" prefHeight="60.0" prefWidth="209.0" styleClass="buttons" stylesheets="@../cssStyles/clientPageStyle.css" text="Received Orders" textFill="DARKGOLDENROD">
                            <font>
@@ -158,7 +281,7 @@
                               <Font name="Cambria Bold Italic" size="20.0" />
                            </font>
                            <HBox.margin>
-                              <Insets right="10.0" />
+                              <Insets right="100.0" />
                            </HBox.margin>
                         </Button>
                      </children>

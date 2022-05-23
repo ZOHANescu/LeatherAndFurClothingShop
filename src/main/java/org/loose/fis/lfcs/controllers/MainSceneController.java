@@ -69,16 +69,18 @@ public class MainSceneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        try {   //loaded the icons
-            Image image1 = new Image("products\\cojoc-sonia.jpg");
-            displayedImage.setImage(image1);
-            displayedImage.setCache(true);
+         {
+            try {   //loaded the icons
+                Image image1 = new Image("products\\cojoc-sonia.jpg");
+                displayedImage.setImage(image1);
+                displayedImage.setCache(true);
 
-            Image image2 = new Image("icons\\truck.jpg");
-            truckIcon.setImage(image2);
-            truckIcon.setCache(true);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
+                Image image2 = new Image("icons\\truck.jpg");
+                truckIcon.setImage(image2);
+                truckIcon.setCache(true);
+            } catch (Exception e) {
+                System.out.println(e.getMessage());
+            }
         }
 
 //        productList = new ArrayList<>(products());
@@ -181,13 +183,15 @@ public class MainSceneController implements Initializable {
         viewProductButton.setVisible(false);
 
         welcomeMessage.setText("Welcome!");
-        welcomeMessage.setFont(Font.font("cambria", FontWeight.BOLD, FontPosture.ITALIC, 24));
+        welcomeMessage.setFont(Font.font("cambria", FontWeight.BOLD, FontPosture.ITALIC, 36));
         welcomeMessage.setTextFill(Color.rgb(184, 134, 11));
 
         try {
             Image welcomeImage = new Image("icons\\bigLeatherSign.png");
             displayedImage.setImage(welcomeImage);
             displayedImage.setCache(true);
+            displayedImage.setFitWidth(300);
+            displayedImage.setFitHeight(400);
         }catch (Exception e){
             e.printStackTrace();
         }

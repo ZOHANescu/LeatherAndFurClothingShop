@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="450.0" prefWidth="500.0" styleClass="login-background" stylesheets="@../cssStyles/login-and-register.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.lfcs.controllers.LoginController">
+<AnchorPane prefHeight="450.0" prefWidth="500.0" styleClass="login-background" stylesheets="@../cssStyles/clientPageStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.lfcs.controllers.LoginController">
    <children>
       <HBox alignment="CENTER" prefHeight="112.0" prefWidth="337.0">
          <children>

@@ -45,3 +45,8 @@
 .login-background{
     -fx-background-color: linear-gradient(from 100px 350px to 700px 700px, white, #b8860b);
 }
+
+.round-text-field{
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 3, 2;
+}
