@@ -2,7 +2,6 @@ package org.loose.fis.lfcs.controllers;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Rectangle2D;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -15,7 +14,6 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
 import javafx.scene.text.FontWeight;
-import javafx.stage.Screen;
 import javafx.stage.Stage;
 import org.loose.fis.lfcs.exceptions.UserInvalidCredentials;
 import org.loose.fis.lfcs.model.User;
@@ -93,6 +91,7 @@ public class LoginController {
     @FXML
     public void loadRegisterPageButton() throws Exception {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\register.fxml")));
+        root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
         window = (Stage) registerButton.getScene().getWindow();
         window.setScene(new Scene(root, 600, 450));
     }

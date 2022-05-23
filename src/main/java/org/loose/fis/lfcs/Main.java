@@ -22,6 +22,7 @@ public class Main extends Application {
         UserService.initDatabase();
 
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\login-page.fxml")));
+        root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
         primaryStage.setTitle("Leather and Fur Clothing Shop");
         primaryStage.setScene(new Scene(root, 600, 450));
         primaryStage.show();

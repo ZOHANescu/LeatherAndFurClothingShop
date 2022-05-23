@@ -7,12 +7,17 @@ import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
+import javafx.scene.text.FontPosture;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import org.loose.fis.lfcs.model.Product;
 import org.loose.fis.lfcs.services.CenterSceneService;
@@ -42,13 +47,19 @@ public class MainSceneController implements Initializable {
     @FXML
     public Label prodPriceLabel;
     @FXML
-    public ImageView prodImage;
-    @FXML
     public ScrollPane scrollPane;
     @FXML
     public GridPane productContainer;
     @FXML
     public Button addProdButton;
+    @FXML
+    public ImageView displayedImage;
+    @FXML
+    public Button homeButton;
+    @FXML
+    public Button viewProductButton;
+    @FXML
+    public Label welcomeMessage;
 
     private Parent root;
     private Stage window;
@@ -59,8 +70,12 @@ public class MainSceneController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         try {   //loaded the icons
-            Image truckImg = new Image("icons\\truck.jpg");
-            truckIcon.setImage(truckImg);
+            Image image1 = new Image("products\\cojoc-sonia.jpg");
+            displayedImage.setImage(image1);
+            displayedImage.setCache(true);
+
+            Image image2 = new Image("icons\\truck.jpg");
+            truckIcon.setImage(image2);
             truckIcon.setCache(true);
         } catch (Exception e) {
             System.out.println(e.getMessage());
@@ -158,6 +173,24 @@ public class MainSceneController implements Initializable {
         window = (Stage) addProdButton.getScene().getWindow();
         window.setScene(new Scene(root, 700, 850));
         CenterSceneService.centerPage(window);
+    }
+
+    public void handleHomeButton(){
+        prodNameLabel.setText("");
+        prodPriceLabel.setText("");
+        viewProductButton.setVisible(false);
+
+        welcomeMessage.setText("Welcome!");
+        welcomeMessage.setFont(Font.font("cambria", FontWeight.BOLD, FontPosture.ITALIC, 24));
+        welcomeMessage.setTextFill(Color.rgb(184, 134, 11));
+
+        try {
+            Image welcomeImage = new Image("icons\\bigLeatherSign.png");
+            displayedImage.setImage(welcomeImage);
+            displayedImage.setCache(true);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

@@ -5,3 +5,7 @@
 .login-buttons{
     -fx-border-radius: 100;
 }
+
+.login-background{
+    -fx-background-color: linear-gradient(from 100px 350px to 700px 700px, white, #b8860b);
+}

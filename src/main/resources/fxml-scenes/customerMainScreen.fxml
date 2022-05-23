@@ -43,6 +43,15 @@
                         <Insets top="15.0" />
                      </VBox.margin>
                   </HBox>
+                  <Pane prefHeight="26.0" prefWidth="431.0">
+                     <children>
+                        <Label fx:id="welcomeMessage" layoutX="127.0" layoutY="9.0">
+                           <font>
+                              <Font size="51.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
                   <VBox fx:id="chosenProdCard" alignment="CENTER" prefHeight="730.0" prefWidth="431.0">
                      <children>
                         <HBox prefHeight="45.0" prefWidth="431.0">
@@ -65,12 +74,12 @@
                               </Label>
                            </children>
                         </HBox>
-                        <ImageView fx:id="prodImage" fitHeight="450.0" fitWidth="330.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="displayedImage" fitHeight="450.0" fitWidth="330.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../../../Poze/Haine/SSC_0505.JPG" />
+                              <Image url="@../products/cojoc-sonia.jpg" />
                            </image>
                         </ImageView>
-                        <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" styleClass="view-product-button" stylesheets="@../cssStyles/clientPageStyle.css" text="View product" textFill="DARKGOLDENROD">
+                        <Button fx:id="viewProductButton" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" styleClass="view-product-button" stylesheets="@../cssStyles/clientPageStyle.css" text="View product" textFill="DARKGOLDENROD">
                            <font>
                               <Font name="Cambria Bold Italic" size="20.0" />
                            </font>
@@ -135,7 +144,7 @@
                         <Insets left="75.0" top="15.0" />
                      </padding>
                      <children>
-                        <Button mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" styleClass="buttons" stylesheets="@../cssStyles/clientPageStyle.css" text="Home" textFill="DARKGOLDENROD">
+                        <Button fx:id="homeButton" mnemonicParsing="false" onAction="#handleHomeButton" prefHeight="60.0" prefWidth="200.0" styleClass="buttons" stylesheets="@../cssStyles/clientPageStyle.css" text="Home" textFill="DARKGOLDENROD">
                            <font>
                               <Font name="Cambria Bold Italic" size="20.0" />
                            </font>
