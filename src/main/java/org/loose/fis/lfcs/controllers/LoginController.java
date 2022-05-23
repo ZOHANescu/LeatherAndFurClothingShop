@@ -9,6 +9,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontPosture;
@@ -36,13 +38,27 @@ public class LoginController {
     public Button loginButton;
     @FXML
     public Label message;
+    @FXML
+    public ImageView userImg;
+    @FXML
+    public ImageView lockImg;
 
     private Parent root;
     private Stage window;
 
     @FXML
     public void initialize(){
-        title.setFont(Font.font("verdana", FontWeight.BOLD, FontPosture.REGULAR, 14));
+        try {   //loaded the icons
+            Image image1 = new Image("icons\\user.png");
+            userImg.setImage(image1);
+            userImg.setCache(true);
+
+            Image image2 = new Image("icons\\lock.png");
+            lockImg.setImage(image2);
+            lockImg.setCache(true);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     @FXML
