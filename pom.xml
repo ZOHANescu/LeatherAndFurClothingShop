@@ -42,6 +42,11 @@
             <artifactId>lombok</artifactId>
             <version>1.18.24</version>
         </dependency>
+        <dependency>
+            <groupId>io.github.typhon0</groupId>
+            <artifactId>AnimateFX</artifactId>
+            <version>1.2.0</version>
+        </dependency>
     </dependencies>
 
     <build>
