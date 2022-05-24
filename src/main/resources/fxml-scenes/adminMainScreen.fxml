@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="850.0" prefWidth="1440.0" styleClass="mainBackground" stylesheets="@../cssStyles/clientPageStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.lfcs.controllers.AdminMainSceneController">
+   <children>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <VBox prefHeight="850.0" prefWidth="431.0" styleClass="right-bar" stylesheets="@../cssStyles/clientPageStyle.css" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="120.0" prefWidth="383.0">
+                     <children>
+                        <Label prefHeight="44.0" prefWidth="140.0" text="Leather&amp;" textFill="DARKGOLDENROD">
+                           <font>
+                              <Font name="Cambria Italic" size="35.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="44.0" prefWidth="68.0" text="Fur" textFill="DARKGOLDENROD">
+                           <font>
+                              <Font name="Cambria Bold" size="35.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="44.0" prefWidth="209.0" text="Clothing Shop" textFill="DARKGOLDENROD">
+                           <font>
+                              <Font name="Cambria" size="35.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Label>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <VBox fx:id="chosenProdCard" alignment="CENTER" prefHeight="730.0" prefWidth="431.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="71.0" prefWidth="350.0" styleClass="free-delivery-card" stylesheets="@../cssStyles/clientPageStyle.css">
+                           <children>
+                              <VBox fillWidth="false" prefHeight="64.0" prefWidth="225.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="44.0" prefWidth="209.0" text="Welcome to the " textFill="DARKGOLDENROD">
+                                       <font>
+                                          <Font name="Cambria Bold Italic" size="24.0" />
+                                       </font>
+                                       <VBox.margin>
+                                          <Insets />
+                                       </VBox.margin>
+                                    </Label>
+                                    <Label alignment="BOTTOM_CENTER" prefHeight="30.0" prefWidth="222.0" text="Administrator Page" textFill="DARKGOLDENROD">
+                                       <font>
+                                          <Font name="Cambria Bold Italic" size="24.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                 <opaqueInsets>
+                                    <Insets />
+                                 </opaqueInsets>
+                                 <padding>
+                                    <Insets bottom="20.0" left="10.0" />
+                                 </padding>
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </VBox>
+                           </children>
+                           <padding>
+                              <Insets left="10.0" top="25.0" />
+                           </padding>
+                           <VBox.margin>
+                              <Insets bottom="20.0" left="20.0" right="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <VBox prefHeight="159.0" prefWidth="150.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="109.0" prefWidth="467.0" styleClass="free-delivery-card" stylesheets="@../cssStyles/clientPageStyle.css">
+                                 <padding>
+                                    <Insets left="10.0" top="25.0" />
+                                 </padding>
+                                 <children>
+                                    <VBox fillWidth="false" prefHeight="80.0" prefWidth="273.0">
+                                       <children>
+                                          <Label alignment="CENTER" prefHeight="30.0" prefWidth="430.0" text="Here you can do " textFill="DARKGOLDENROD">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="24.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label alignment="BOTTOM_CENTER" prefHeight="30.0" prefWidth="250.0" text="the following actions:" textFill="DARKGOLDENROD">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="20.0" left="10.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="20.0" left="60.0" right="60.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="109.0" prefWidth="467.0" styleClass="free-delivery-card" stylesheets="@../cssStyles/clientPageStyle.css">
+                                 <padding>
+                                    <Insets left="10.0" top="25.0" />
+                                 </padding>
+                                 <children>
+                                    <VBox fillWidth="false" prefHeight="80.0" prefWidth="273.0">
+                                       <children>
+                                          <Label alignment="CENTER" prefHeight="30.0" prefWidth="430.0" text="1. Add new products" textFill="DARKGOLDENROD">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="24.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label alignment="BOTTOM_CENTER" prefHeight="30.0" prefWidth="250.0" text="to the shop." textFill="DARKGOLDENROD">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="20.0" left="10.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="109.0" prefWidth="467.0" styleClass="free-delivery-card" stylesheets="@../cssStyles/clientPageStyle.css">
+                                 <padding>
+                                    <Insets left="10.0" top="25.0" />
+                                 </padding>
+                                 <children>
+                                    <VBox fillWidth="false" prefHeight="80.0" prefWidth="273.0">
+                                       <children>
+                                          <Label alignment="CENTER" prefHeight="30.0" prefWidth="430.0" text="1. Add new products" textFill="DARKGOLDENROD">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="24.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label alignment="BOTTOM_CENTER" prefHeight="30.0" prefWidth="250.0" text="to the shop." textFill="DARKGOLDENROD">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="20.0" left="10.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="109.0" prefWidth="467.0" styleClass="free-delivery-card" stylesheets="@../cssStyles/clientPageStyle.css">
+                                 <padding>
+                                    <Insets left="10.0" top="25.0" />
+                                 </padding>
+                                 <children>
+                                    <VBox fillWidth="false" prefHeight="80.0" prefWidth="273.0">
+                                       <children>
+                                          <Label alignment="CENTER" prefHeight="30.0" prefWidth="430.0" text="2. Remove products" textFill="DARKGOLDENROD">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="24.0" />
+                                             </font>
+                                             <VBox.margin>
+                                                <Insets />
+                                             </VBox.margin>
+                                          </Label>
+                                          <Label alignment="BOTTOM_CENTER" prefHeight="30.0" prefWidth="250.0" text="from the shop." textFill="DARKGOLDENROD">
+                                             <font>
+                                                <Font name="Cambria Bold Italic" size="24.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                       <padding>
+                                          <Insets bottom="20.0" left="10.0" />
+                                       </padding>
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </VBox>
+                                 </children>
+                                 <VBox.margin>
+                                    <Insets bottom="10.0" left="20.0" right="20.0" />
+                                 </VBox.margin>
+                              </HBox>
+                           </children>
+                        </VBox>
+                        <ImageView fx:id="displayedImage" fitHeight="186.0" fitWidth="165.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../icons/bigLeatherSign.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </ImageView>
+                        <HBox prefHeight="45.0" prefWidth="431.0" />
+                     </children>
+                  </VBox>
+               </children>
+            </VBox>
+         </left>
+         <center>
+            <VBox prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+               <children>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <VBox.margin>
+                        <Insets top="15.0" />
+                     </VBox.margin>
+                     <padding>
+                        <Insets left="75.0" top="15.0" />
+                     </padding>
+                     <children>
+                        <Pane prefHeight="85.0" prefWidth="40.0" />
+                        <Button fx:id="receivedOrdersButton" mnemonicParsing="false" onAction="#handleReceivedOrdersButton" prefHeight="60.0" prefWidth="209.0" styleClass="buttons" stylesheets="@../cssStyles/clientPageStyle.css" text="Received Orders" textFill="DARKGOLDENROD">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="20.0" />
+                           </font>
+                        </Button>
+                        <Pane prefHeight="15.0" prefWidth="40.0" />
+                        <Button fx:id="addProdButton" mnemonicParsing="false" onAction="#handleAddProductButton" prefHeight="60.0" prefWidth="200.0" styleClass="buttons" stylesheets="@../cssStyles/clientPageStyle.css" text="Add Product" textFill="DARKGOLDENROD">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="20.0" />
+                           </font>
+                        </Button>
+                        <Pane prefHeight="15.0" prefWidth="40.0" />
+                        <Button fx:id="removeProdButton" mnemonicParsing="false" prefHeight="60.0" prefWidth="206.0" styleClass="buttons" stylesheets="@../cssStyles/clientPageStyle.css" text="Remove Product" textFill="DARKGOLDENROD">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="19.0" />
+                           </font>
+                        </Button>
+                        <Pane prefHeight="15.0" prefWidth="40.0" />
+                        <Button fx:id="signOutButton" mnemonicParsing="false" onAction="#handleSignOutButton" prefHeight="60.0" prefWidth="200.0" styleClass="buttons" stylesheets="@../cssStyles/clientPageStyle.css" text="Sign Out" textFill="DARKGOLDENROD">
+                           <font>
+                              <Font name="Cambria Bold Italic" size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets right="100.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" stylesheets="@../cssStyles/clientPageStyle.css" VBox.vgrow="ALWAYS">
+                     <children>
+                        <ScrollPane opacity="0.0" prefHeight="550.0" prefWidth="850.0" styleClass="scrollPanel" stylesheets="@../cssStyles/clientPageStyle.css">
+                           <content>
+                              <GridPane prefHeight="0.0" prefWidth="0.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                 </columnConstraints>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

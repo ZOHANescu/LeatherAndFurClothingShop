@@ -1,0 +1,57 @@
+.mainBackground{
+    -fx-background-color: #E6E6FA;
+}
+
+.right-bar{
+    -fx-background-color: #FAEBD7;
+}
+
+.buttons{
+    -fx-background-color: white;
+    -fx-background-radius: 100;
+    -fx-border-color: #b8860b;
+    -fx-border-radius: 100;
+    -fx-border-width: 2;
+}
+
+.view-product-button{
+    -fx-background-color: white;
+    -fx-background-radius: 100;
+    -fx-border-width: 2;
+    -fx-border-color: #b8860b;
+    -fx-border-radius: 100;
+}
+
+.free-delivery-card{
+    -fx-background-color: white;
+    -fx-background-radius: 30;
+    -fx-border-radius: 30;
+    -fx-border-color: #b8860b;
+    -fx-border-width: 2;
+}
+
+.scrollPanel{
+    -fx-background-color: rgba(0,0,0,0);
+}
+
+.login-text-fields{
+    -fx-border-radius: 100;
+}
+
+.login-buttons{
+    -fx-border-radius: 100;
+}
+
+.login-background{
+    -fx-background-color: linear-gradient(from 100px 350px to 700px 700px, white, #b8860b);
+}
+
+.round-text-field{
+    -fx-background-insets: 0, 1;
+    -fx-background-radius: 3, 2;
+}
+
+.product-card{
+    -fx-background-radius: 20;
+    -fx-background-color: #FAEBD7;
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.lfcs.controllers.AboutUsController">
+   <children>
+      <VBox layoutX="257.0" layoutY="109.0" prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label prefHeight="25.0" prefWidth="77.0" text="About Us">
+               <VBox.margin>
+                  <Insets left="75.0" top="30.0" />
+               </VBox.margin>
+               <font>
+                  <Font name="Cambria Bold Italic" size="16.0" />
+               </font>
+            </Label>
+            <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="36.0" prefWidth="76.0" styleClass="buttons" stylesheets="@../cssStyles/clientPageStyle.css" text="Back">
+               <VBox.margin>
+                  <Insets bottom="30.0" left="75.0" top="400.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
