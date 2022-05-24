@@ -24,6 +24,7 @@ import org.loose.fis.lfcs.model.Product;
 import org.loose.fis.lfcs.services.CenterSceneService;
 import org.loose.fis.lfcs.services.LoadProductsService;
 import org.loose.fis.lfcs.services.MyListener;
+import org.loose.fis.lfcs.services.UserService;
 
 import java.io.IOException;
 import java.net.URL;
@@ -73,7 +74,10 @@ public class MainSceneController implements Initializable {
         this.prodNameLabelCard.setText("");
         this.prodPriceLabelCard.setText("");
         viewProductButton.setVisible(false);
-        welcomeMessage.setText("Welcome!");
+
+        String message = "Welcome " + UserService.getCurrentUser().getUsername() + "!";
+
+        welcomeMessage.setText(message);
         welcomeMessage.setFont(Font.font("cambria", FontWeight.BOLD, FontPosture.ITALIC, 36));
         welcomeMessage.setTextFill(Color.rgb(184, 134, 11));
 
@@ -178,7 +182,7 @@ public class MainSceneController implements Initializable {
         prodPriceLabelCard.setText("");
         viewProductButton.setVisible(false);
 
-        welcomeMessage.setText("Welcome!");
+        welcomeMessage.setText("Welcome "+ UserService.getCurrentUser().getUsername() + "!");
         welcomeMessage.setFont(Font.font("cambria", FontWeight.BOLD, FontPosture.ITALIC, 36));
         welcomeMessage.setTextFill(Color.rgb(184, 134, 11));
 

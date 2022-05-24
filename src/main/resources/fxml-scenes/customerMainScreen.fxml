@@ -45,12 +45,15 @@
                   </HBox>
                   <Pane prefHeight="26.0" prefWidth="431.0">
                      <children>
-                        <Label fx:id="welcomeMessage" layoutX="150.0" layoutY="9.0">
+                        <Label fx:id="welcomeMessage" alignment="CENTER" layoutX="36.0" layoutY="9.0" prefHeight="74.0" prefWidth="398.0">
                            <font>
                               <Font size="51.0" />
                            </font>
                         </Label>
                      </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
                   </Pane>
                   <VBox fx:id="chosenProdCard" alignment="CENTER" prefHeight="730.0" prefWidth="431.0">
                      <children>
