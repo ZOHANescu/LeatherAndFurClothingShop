@@ -1,4 +1,4 @@
-package org.loose.fis.lfcs;
+package main.java.org.loose.fis.lfcs;
 
 import animatefx.animation.*;
 import javafx.application.Application;

@@ -3,6 +3,8 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -11,17 +13,61 @@
    <children>
       <VBox layoutX="257.0" layoutY="109.0" prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label prefHeight="25.0" prefWidth="77.0" text="About Us">
+            <Label text="About Us ">
                <VBox.margin>
                   <Insets left="75.0" top="30.0" />
                </VBox.margin>
                <font>
-                  <Font name="Cambria Bold Italic" size="16.0" />
+                  <Font name="Baskerville Old Face" size="32.0" />
                </font>
             </Label>
+            <VBox prefHeight="340.0" prefWidth="754.0">
+               <children>
+                  <Label graphicTextGap="3.0" lineSpacing="9.0" prefHeight="63.0" prefWidth="352.0" text="Welcome to our Leather&amp;Fur Clothing Shop!" wrapText="true">
+                     <VBox.margin>
+                        <Insets left="100.0" right="200.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Britannic Bold" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="Here you can find a big variety of different leather clothing that can satisfy your tastes.">
+                     <font>
+                        <Font name="Cambria" size="17.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="100.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label prefHeight="78.0" prefWidth="656.0" text="All our products are 100% Natural Premium Leather, made with a lot of care and skill, from the raw leather to the final product." wrapText="true">
+                     <VBox.margin>
+                        <Insets bottom="50.0" left="100.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="Candara" size="17.0" />
+                     </font>
+                  </Label>
+                  <Label text="Enjoy your stay on our app.☺">
+                     <font>
+                        <Font name="Century" size="23.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets left="100.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icons/bigLeatherSign.png" />
+               </image>
+               <VBox.margin>
+                  <Insets left="650.0" />
+               </VBox.margin>
+            </ImageView>
             <Button fx:id="backButton" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="36.0" prefWidth="76.0" styleClass="buttons" stylesheets="@../cssStyles/clientPageStyle.css" text="Back">
                <VBox.margin>
-                  <Insets bottom="30.0" left="75.0" top="400.0" />
+                  <Insets bottom="30.0" left="75.0" />
                </VBox.margin>
             </Button>
          </children>
