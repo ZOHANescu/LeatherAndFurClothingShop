@@ -22,6 +22,8 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import org.loose.fis.lfcs.model.Product;
 import org.loose.fis.lfcs.services.CenterSceneService;
+import org.loose.fis.lfcs.services.MyListener;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -60,8 +62,9 @@ public class MainSceneController implements Initializable {
 
     private Parent root;
     private Stage window;
-
     private List<Product> productList = new ArrayList<>();
+    private MyListener myListener;
+    private Image image;
 
     private List<Product> getData(){
 
@@ -75,31 +78,31 @@ public class MainSceneController implements Initializable {
         productList.add(product);
 
         product = new Product();
-        product.setProductName("Jacheta Vivi");
+        product.setProductName("Vivi Jacket");
         product.setProductPrice(550);
         product.setProductImgSrcPath("products\\geaca-vivi.jpg");
         productList.add(product);
 
         product = new Product();
-        product.setProductName("Paloma");
+        product.setProductName("Paloma Coat");
         product.setProductPrice(800);
         product.setProductImgSrcPath("products\\pardesiu-paloma.jpg");
         productList.add(product);
 
         product = new Product();
-        product.setProductName("Women's Aviator");
+        product.setProductName("Aviator Jacket");
         product.setProductPrice(850);
         product.setProductImgSrcPath("products\\womens-aviator.jpg");
         productList.add(product);
 
         product = new Product();
-        product.setProductName("Ada");
+        product.setProductName("Ada Jacket");
         product.setProductPrice(600);
         product.setProductImgSrcPath("products\\jacheta-ada.jpg");
         productList.add(product);
 
         product = new Product();
-        product.setProductName("Cojoc Alin");
+        product.setProductName("Alin Coat");
         product.setProductPrice(1200);
         product.setProductImgSrcPath("products\\cojoc-alin.jpg");
         productList.add(product);
@@ -110,8 +113,15 @@ public class MainSceneController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
+        this.prodNameLabelCard.setText("");
+        this.prodPriceLabelCard.setText("");
+        viewProductButton.setVisible(false);
+        welcomeMessage.setText("Welcome!");
+        welcomeMessage.setFont(Font.font("cambria", FontWeight.BOLD, FontPosture.ITALIC, 36));
+        welcomeMessage.setTextFill(Color.rgb(184, 134, 11));
+
         try {   //loaded the icons
-            Image image1 = new Image("products\\geaca-vivi.jpg");
+            Image image1 = new Image("icons\\bigLeatherSign.png");
             displayedImageCard.setImage(image1);
             displayedImageCard.setCache(true);
 
@@ -126,6 +136,20 @@ public class MainSceneController implements Initializable {
 
         productList.addAll(getData());
 
+        if(productList.size() > 0){
+            setChosenProdCard(productList.get(0));
+            welcomeMessage.setText("");
+            viewProductButton.setVisible(true);
+            myListener = new MyListener() {
+                @Override
+                public void onClickListener(Product product) {
+                    setChosenProdCard(product);
+                    welcomeMessage.setText("");
+                    viewProductButton.setVisible(true);
+                }
+            };
+        }
+
         int column = 0;
         int row = 1;
 
@@ -136,7 +160,7 @@ public class MainSceneController implements Initializable {
                 AnchorPane anchorPane = fxmlLoader.load();
 
                 ProductController productController = fxmlLoader.getController();
-                productController.setData(product);
+                productController.setData(product, myListener);
 
                 if (column == 3) {
                     column = 0;
@@ -160,6 +184,13 @@ public class MainSceneController implements Initializable {
         }catch(IOException e){
             e.printStackTrace();
         }
+    }
+
+    private void setChosenProdCard(Product product){
+        prodNameLabelCard.setText(product.getProductName());
+        prodPriceLabelCard.setText("$" + product.getProductPrice());
+        image = new Image(getClass().getClassLoader().getResourceAsStream(product.getProductImgSrcPath()));
+        displayedImageCard.setImage(image);
     }
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

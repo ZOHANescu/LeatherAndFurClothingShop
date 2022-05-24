@@ -56,17 +56,17 @@
                      <children>
                         <HBox prefHeight="45.0" prefWidth="431.0">
                            <children>
-                              <Label fx:id="prodNameLabelCard" prefHeight="35.0" prefWidth="275.0" text="Product name" textFill="DARKGOLDENROD">
+                              <Label fx:id="prodNameLabelCard" prefHeight="35.0" prefWidth="210.0" text="Product name" textFill="DARKGOLDENROD">
                                  <font>
-                                    <Font name="Cambria Italic" size="30.0" />
+                                    <Font name="Cambria Bold Italic" size="26.0" />
                                  </font>
                                  <HBox.margin>
-                                    <Insets left="10.0" />
+                                    <Insets left="55.0" />
                                  </HBox.margin>
                               </Label>
                               <Label fx:id="prodPriceLabelCard" prefHeight="35.0" prefWidth="152.0" text="Price: $500" textFill="DARKGOLDENROD">
                                  <font>
-                                    <Font name="Cambria Italic" size="30.0" />
+                                    <Font name="Cambria Bold Italic" size="26.0" />
                                  </font>
                                  <HBox.margin>
                                     <Insets right="10.0" />
@@ -74,7 +74,7 @@
                               </Label>
                            </children>
                         </HBox>
-                        <ImageView fx:id="displayedImageCard" fitHeight="450.0" fitWidth="330.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fx:id="displayedImageCard" fitHeight="450.0" fitWidth="400.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../products/cojoc-sonia.png" />
                            </image>
