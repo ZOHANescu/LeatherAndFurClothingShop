@@ -24,6 +24,7 @@ import org.loose.fis.lfcs.model.Product;
 import org.loose.fis.lfcs.services.CenterSceneService;
 import org.loose.fis.lfcs.services.LoadProductsService;
 import org.loose.fis.lfcs.services.MyListener;
+import org.loose.fis.lfcs.services.UserService;
 
 import java.io.IOException;
 import java.net.URL;
@@ -73,7 +74,10 @@ public class MainSceneController implements Initializable {
         this.prodNameLabelCard.setText("");
         this.prodPriceLabelCard.setText("");
         viewProductButton.setVisible(false);
-        welcomeMessage.setText("Welcome!");
+
+        String message = "Welcome " + UserService.getCurrentUser().getUsername() + "!";
+
+        welcomeMessage.setText(message);
         welcomeMessage.setFont(Font.font("cambria", FontWeight.BOLD, FontPosture.ITALIC, 36));
         welcomeMessage.setTextFill(Color.rgb(184, 134, 11));
 
@@ -93,17 +97,14 @@ public class MainSceneController implements Initializable {
 
         productList = LoadProductsService.getData();
 
-        if(productList.size() > 0){
+        if (productList.size() > 0) {
             setChosenProdCard(productList.get(0));
             welcomeMessage.setText("");
             viewProductButton.setVisible(true);
-            myListener = new MyListener() {
-                @Override
-                public void onClickListener(Product product) {
-                    setChosenProdCard(product);
-                    welcomeMessage.setText("");
-                    viewProductButton.setVisible(true);
-                }
+            myListener = product -> {
+                setChosenProdCard(product);
+                welcomeMessage.setText("");
+                viewProductButton.setVisible(true);
             };
         }
 
@@ -138,12 +139,12 @@ public class MainSceneController implements Initializable {
 
                 GridPane.setMargin(anchorPane, new Insets(10));
             }
-        }catch(IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private void setChosenProdCard(Product product){
+    private void setChosenProdCard(Product product) {
         prodNameLabelCard.setText(product.getProductName());
         prodPriceLabelCard.setText("$" + product.getProductPrice());
         image = new Image(getClass().getClassLoader().getResourceAsStream(product.getProductImgSrcPath()));
@@ -168,7 +169,7 @@ public class MainSceneController implements Initializable {
         CenterSceneService.centerPage(window);
     }
 
-    public void handleAboutUsButton() throws IOException{
+    public void handleAboutUsButton() throws IOException {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\aboutUsPage.fxml")));
         root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
         window = (Stage) aboutUsButton.getScene().getWindow();
@@ -176,12 +177,12 @@ public class MainSceneController implements Initializable {
         CenterSceneService.centerPage(window);
     }
 
-    public void handleHomeButton(){
+    public void handleHomeButton() {
         prodNameLabelCard.setText("");
         prodPriceLabelCard.setText("");
         viewProductButton.setVisible(false);
 
-        welcomeMessage.setText("Welcome!");
+        welcomeMessage.setText("Welcome " + UserService.getCurrentUser().getUsername() + "!");
         welcomeMessage.setFont(Font.font("cambria", FontWeight.BOLD, FontPosture.ITALIC, 36));
         welcomeMessage.setTextFill(Color.rgb(184, 134, 11));
 
@@ -191,9 +192,18 @@ public class MainSceneController implements Initializable {
             displayedImageCard.setCache(true);
             displayedImageCard.setFitWidth(300);
             displayedImageCard.setFitHeight(400);
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+    public void handleViewProductButton() throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\ViewProductDetailed.fxml")));
+        root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
+        window = (Stage) viewProductButton.getScene().getWindow();
+        window.setScene(new Scene(root, 1000, 650));
+        CenterSceneService.centerPage(window);
+    }
+
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

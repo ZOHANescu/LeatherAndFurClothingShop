@@ -5,7 +5,6 @@ import org.dizitart.no2.objects.ObjectRepository;
 import org.loose.fis.lfcs.exceptions.UserInvalidCredentials;
 import org.loose.fis.lfcs.exceptions.UsernameAlreadyExistsException;
 import org.loose.fis.lfcs.model.User;
-
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -16,6 +15,12 @@ import static org.loose.fis.lfcs.services.FileSystemService.getPathToFile;
 public class UserService {
 
     private static ObjectRepository<User> userRepository;
+
+    private static User currentUser;
+
+    public static User getCurrentUser() {
+        return currentUser;
+    }
 
     public static void initDatabase() {
     //java -jar --module-path "C:\Program Files\Java\javafx-sdk-18\lib" --add-modules javafx.controls,javafx.fxml nitrite-explorer-3.4.3.jar
@@ -50,6 +55,7 @@ public class UserService {
                     throw new UserInvalidCredentials();
                 } else {
                     user = userDB;
+                    currentUser = user;
                     break;
                 }
             }
