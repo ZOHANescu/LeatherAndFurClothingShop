@@ -1,7 +1,6 @@
 package org.loose.fis.lfcs.services;
 
 import org.loose.fis.lfcs.model.Product;
-
 import java.util.ArrayList;
 import java.util.List;
 

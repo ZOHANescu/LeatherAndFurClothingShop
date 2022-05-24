@@ -82,7 +82,7 @@
                               <Image url="@../products/cojoc-sonia.png" />
                            </image>
                         </ImageView>
-                        <Button fx:id="viewProductButton" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" styleClass="view-product-button" stylesheets="@../cssStyles/clientPageStyle.css" text="View product" textFill="DARKGOLDENROD">
+                        <Button fx:id="viewProductButton" onAction="#handleViewProductButton" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" styleClass="view-product-button" stylesheets="@../cssStyles/clientPageStyle.css" text="View product" textFill="DARKGOLDENROD">
                            <font>
                               <Font name="Cambria Bold Italic" size="20.0" />
                            </font>
