@@ -22,6 +22,7 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import org.loose.fis.lfcs.model.Product;
 import org.loose.fis.lfcs.services.CenterSceneService;
+import org.loose.fis.lfcs.services.LoadProductsService;
 import org.loose.fis.lfcs.services.MyListener;
 
 import java.io.IOException;
@@ -66,50 +67,6 @@ public class MainSceneController implements Initializable {
     private MyListener myListener;
     private Image image;
 
-    private List<Product> getData(){
-
-        List<Product> productList = new ArrayList<>();
-        Product product;
-
-        product = new Product();
-        product.setProductName("Men's Biker");
-        product.setProductPrice(550);
-        product.setProductImgSrcPath("products\\mens-biker.jpg");
-        productList.add(product);
-
-        product = new Product();
-        product.setProductName("Vivi Jacket");
-        product.setProductPrice(550);
-        product.setProductImgSrcPath("products\\geaca-vivi.jpg");
-        productList.add(product);
-
-        product = new Product();
-        product.setProductName("Paloma Coat");
-        product.setProductPrice(800);
-        product.setProductImgSrcPath("products\\pardesiu-paloma.jpg");
-        productList.add(product);
-
-        product = new Product();
-        product.setProductName("Aviator Jacket");
-        product.setProductPrice(850);
-        product.setProductImgSrcPath("products\\womens-aviator.jpg");
-        productList.add(product);
-
-        product = new Product();
-        product.setProductName("Ada Jacket");
-        product.setProductPrice(600);
-        product.setProductImgSrcPath("products\\jacheta-ada.jpg");
-        productList.add(product);
-
-        product = new Product();
-        product.setProductName("Alin Coat");
-        product.setProductPrice(1200);
-        product.setProductImgSrcPath("products\\cojoc-alin.jpg");
-        productList.add(product);
-
-        return productList;
-    }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -134,7 +91,7 @@ public class MainSceneController implements Initializable {
 
         ///////////////////////////////////////////////////
 
-        productList.addAll(getData());
+        productList = LoadProductsService.getData();
 
         if(productList.size() > 0){
             setChosenProdCard(productList.get(0));

@@ -29,6 +29,14 @@ public class ProductController {
         productImage.setImage(image);
     }
 
+    public void setDataNoListener(Product product){
+        this.product = product;
+        productNameLabel.setText(product.getProductName());
+        productPriceLabel.setText("$" + product.getProductPrice());
+        Image image = new Image(getClass().getClassLoader().getResourceAsStream(product.getProductImgSrcPath()));
+        productImage.setImage(image);
+    }
+
     @FXML
     private void click(MouseEvent mouseEvent){
         myListener.onClickListener(product);
