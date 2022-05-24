@@ -270,7 +270,7 @@
                            </font>
                         </Button>
                         <Pane prefHeight="15.0" prefWidth="40.0" />
-                        <Button fx:id="removeProdButton" mnemonicParsing="false" prefHeight="60.0" prefWidth="206.0" styleClass="buttons" stylesheets="@../cssStyles/clientPageStyle.css" text="Remove Product" textFill="DARKGOLDENROD">
+                        <Button fx:id="removeProdButton" onAction="#handleRemoveProdButton" mnemonicParsing="false" prefHeight="60.0" prefWidth="206.0" styleClass="buttons" stylesheets="@../cssStyles/clientPageStyle.css" text="Remove Product" textFill="DARKGOLDENROD">
                            <font>
                               <Font name="Cambria Bold Italic" size="19.0" />
                            </font>

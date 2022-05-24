@@ -39,6 +39,8 @@ public class AdminMainSceneController implements Initializable {
     public ScrollPane scrollPane;
     @FXML
     public GridPane productContainer;
+    @FXML
+    public Button removeProdButton;
 
     private Parent root;
     private Stage window;
@@ -117,6 +119,13 @@ public class AdminMainSceneController implements Initializable {
         root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\addProduct.fxml")));
         root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
         window = (Stage) addProdButton.getScene().getWindow();
+        window.setScene(new Scene(root, 700, 850));
+        CenterSceneService.centerPage(window);
+    }
+    public void handleRemoveProdButton() throws IOException {
+        root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("fxml-scenes\\removeProduct.fxml")));
+        root.getStylesheets().add(getClass().getClassLoader().getResource("cssStyles\\clientPageStyle.css").toString());
+        window = (Stage) removeProdButton.getScene().getWindow();
         window.setScene(new Scene(root, 700, 850));
         CenterSceneService.centerPage(window);
     }
