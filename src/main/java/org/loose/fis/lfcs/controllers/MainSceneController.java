@@ -138,11 +138,9 @@ public class MainSceneController implements Initializable {
                 ProductController productController = fxmlLoader.getController();
                 productController.setData(product);
 
-                System.out.println(product.getProductName() + " " + product.getProductPrice() + "\n");
-
                 if (column == 3) {
                     column = 0;
-                    row++;
+                    ++row;
                 }
 
                 productContainer.add(anchorPane, column++, row);

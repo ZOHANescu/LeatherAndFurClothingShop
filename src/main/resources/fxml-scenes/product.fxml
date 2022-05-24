@@ -9,13 +9,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.lfcs.controllers.ProductController">
+<AnchorPane styleClass="product-card" stylesheets="@../cssStyles/clientPageStyle.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.loose.fis.lfcs.controllers.ProductController">
    <children>
       <VBox alignment="CENTER" prefHeight="387.0" prefWidth="300.0">
          <children>
             <ImageView fx:id="productImage" fitHeight="350.0" fitWidth="250.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../products/cojoc-sonia.jpg" />
+                  <Image url="@../products/cojoc-sonia.png" />
                </image>
                <VBox.margin>
                   <Insets top="30.0" />
@@ -23,14 +23,17 @@
             </ImageView>
             <HBox prefHeight="100.0" prefWidth="200.0">
                <children>
-                  <Label fx:id="productNameLabel" prefHeight="38.0" prefWidth="184.0" text="&lt;Name&gt;">
+                  <Label fx:id="productNameLabel" prefHeight="38.0" prefWidth="144.0" text="&lt;Name&gt;" textFill="DARKGOLDENROD">
                      <font>
-                        <Font size="26.0" />
+                        <Font name="Cambria" size="24.0" />
                      </font>
+                     <HBox.margin>
+                        <Insets left="40.0" />
+                     </HBox.margin>
                   </Label>
-                  <Label fx:id="productPriceLabel" prefHeight="38.0" prefWidth="104.0" text="&lt;Price&gt;">
+                  <Label fx:id="productPriceLabel" prefHeight="38.0" prefWidth="104.0" text="&lt;Price&gt;" textFill="DARKGOLDENROD">
                      <font>
-                        <Font size="26.0" />
+                        <Font name="Cambria" size="24.0" />
                      </font>
                   </Label>
                </children>

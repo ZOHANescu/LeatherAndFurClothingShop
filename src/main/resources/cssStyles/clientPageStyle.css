@@ -50,3 +50,8 @@
     -fx-background-insets: 0, 1;
     -fx-background-radius: 3, 2;
 }
+
+.product-card{
+    -fx-background-radius: 20;
+    -fx-background-color: #FAEBD7;
+}

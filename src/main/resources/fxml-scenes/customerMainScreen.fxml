@@ -8,10 +8,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -76,7 +76,7 @@
                         </HBox>
                         <ImageView fx:id="displayedImageCard" fitHeight="450.0" fitWidth="330.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../products/cojoc-sonia.jpg" />
+                              <Image url="@../products/cojoc-sonia.png" />
                            </image>
                         </ImageView>
                         <Button fx:id="viewProductButton" mnemonicParsing="false" prefHeight="60.0" prefWidth="200.0" styleClass="view-product-button" stylesheets="@../cssStyles/clientPageStyle.css" text="View product" textFill="DARKGOLDENROD">
@@ -173,12 +173,12 @@
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" stylesheets="@../cssStyles/clientPageStyle.css" VBox.vgrow="ALWAYS">
                      <children>
-                        <ScrollPane fx:id="scrollPane" prefHeight="550.0" prefWidth="850.0" styleClass="scrollPanel" stylesheets="@../cssStyles/clientPageStyle.css">
+                        <ScrollPane fx:id="scrollPane" prefHeight="735.0" prefWidth="994.0" styleClass="scrollPanel" stylesheets="@../cssStyles/clientPageStyle.css">
                            <content>
                               <GridPane fx:id="productContainer" prefHeight="0.0" prefWidth="0.0">
-                                 <columnConstraints>
-                                    <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
-                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" />
+                                 </rowConstraints>
                               </GridPane>
                            </content>
                         </ScrollPane>
