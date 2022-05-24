@@ -3,15 +3,25 @@ package org.loose.fis.lfcs.controllers;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Region;
 import javafx.stage.Stage;
+import org.loose.fis.lfcs.model.Product;
 import org.loose.fis.lfcs.services.CenterSceneService;
+import org.loose.fis.lfcs.services.LoadProductsService;
+
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
@@ -25,21 +35,105 @@ public class AdminMainSceneController implements Initializable {
     public Button addProdButton;
     @FXML
     public ImageView displayedImage;
+    @FXML
+    public ScrollPane scrollPane;
+    @FXML
+    public GridPane productContainer;
 
     private Parent root;
     private Stage window;
+    private List<Product> productList = new ArrayList<>();
+/*
+    private List<Product> getData(){
 
+        List<Product> productList = new ArrayList<>();
+        Product product;
+
+        product = new Product();
+        product.setProductName("Men's Biker");
+        product.setProductPrice(550);
+        product.setProductImgSrcPath("products\\mens-biker.jpg");
+        productList.add(product);
+
+        product = new Product();
+        product.setProductName("Vivi Jacket");
+        product.setProductPrice(550);
+        product.setProductImgSrcPath("products\\geaca-vivi.jpg");
+        productList.add(product);
+
+        product = new Product();
+        product.setProductName("Paloma Coat");
+        product.setProductPrice(800);
+        product.setProductImgSrcPath("products\\pardesiu-paloma.jpg");
+        productList.add(product);
+
+        product = new Product();
+        product.setProductName("Aviator Jacket");
+        product.setProductPrice(850);
+        product.setProductImgSrcPath("products\\womens-aviator.jpg");
+        productList.add(product);
+
+        product = new Product();
+        product.setProductName("Ada Jacket");
+        product.setProductPrice(600);
+        product.setProductImgSrcPath("products\\jacheta-ada.jpg");
+        productList.add(product);
+
+        product = new Product();
+        product.setProductName("Alin Coat");
+        product.setProductPrice(1200);
+        product.setProductImgSrcPath("products\\cojoc-alin.jpg");
+        productList.add(product);
+
+        return productList;
+    }
+*/
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        {
-            try {   //loaded the icons
-                Image image = new Image("icons\\bigLeatherSign.png");
-                displayedImage.setImage(image);
-                displayedImage.setCache(true);
-            } catch (Exception e) {
-                System.out.println(e.getMessage());
+        try {   //loaded the icons
+            Image image = new Image("icons\\bigLeatherSign.png");
+            displayedImage.setImage(image);
+            displayedImage.setCache(true);
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+
+        productList = LoadProductsService.getData();
+
+        int column = 0;
+        int row = 1;
+
+        try {
+            for (Product product : productList) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getClassLoader().getResource("fxml-scenes\\product.fxml"));
+                AnchorPane anchorPane = fxmlLoader.load();
+
+                ProductController productController = fxmlLoader.getController();
+                productController.setDataNoListener(product);
+
+                if (column == 3) {
+                    column = 0;
+                    ++row;
+                }
+
+                productContainer.add(anchorPane, column++, row);
+
+                //set grid width
+                productContainer.setMinWidth(Region.USE_COMPUTED_SIZE);
+                productContainer.setPrefWidth(Region.USE_COMPUTED_SIZE);
+                productContainer.setMaxWidth(Region.USE_PREF_SIZE);
+
+                //set grid height
+                productContainer.setMinHeight(Region.USE_COMPUTED_SIZE);
+                productContainer.setPrefHeight(Region.USE_COMPUTED_SIZE);
+                productContainer.setMaxHeight(Region.USE_PREF_SIZE);
+
+                GridPane.setMargin(anchorPane, new Insets(10));
             }
+        }catch(IOException e){
+            e.printStackTrace();
         }
     }
 
