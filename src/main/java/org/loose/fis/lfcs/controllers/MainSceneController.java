@@ -97,13 +97,10 @@ public class MainSceneController implements Initializable {
             setChosenProdCard(productList.get(0));
             welcomeMessage.setText("");
             viewProductButton.setVisible(true);
-            myListener = new MyListener() {
-                @Override
-                public void onClickListener(Product product) {
-                    setChosenProdCard(product);
-                    welcomeMessage.setText("");
-                    viewProductButton.setVisible(true);
-                }
+            myListener = product -> {
+                setChosenProdCard(product);
+                welcomeMessage.setText("");
+                viewProductButton.setVisible(true);
             };
         }
 
